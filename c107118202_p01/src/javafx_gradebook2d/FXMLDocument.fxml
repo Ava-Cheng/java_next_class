@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="389.0" prefWidth="578.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx_gradebook2d.FXMLDocumentController">
+   <children>
+      <TextArea fx:id="display" layoutX="22.0" layoutY="28.0" prefHeight="220.0" prefWidth="320.0" />
+      <Button layoutX="480.0" layoutY="350.0" onAction="#append_file" text="附加檔案" />
+      <Button layoutX="480.0" layoutY="307.0" onAction="#replace_file" text="覆寫檔案" />
+      <TextArea fx:id="input" layoutX="22.0" layoutY="263.0" prefHeight="114.0" prefWidth="320.0" text="李大同,90,100&#10;吳忠憲,85,87" />
+      <Button layoutX="515.0" layoutY="28.0" mnemonicParsing="false" onAction="#check" text="確定" />
+      <ComboBox fx:id="list_all" layoutX="359.0" layoutY="28.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>
