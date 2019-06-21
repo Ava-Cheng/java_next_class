@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="600.0" stylesheets="@bootstrap3.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chapter32_database.CrudStudentTableViewController">
+    <children>
+        <TabPane layoutX="-1.0" layoutY="-2.0" prefHeight="650.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="學生資料維護(表格)">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="429.0" prefWidth="620.0" style="-fx-background-color: Azure;">
+                            <children>
+                                <Button layoutX="339.0" layoutY="409.0" mnemonicParsing="false" onAction="#update" prefHeight="31.0" prefWidth="104.0" styleClass="danger" text="更新這一筆" />
+                                <Button layoutX="470.0" layoutY="408.0" mnemonicParsing="false" onAction="#delete" styleClass="danger" text="刪除這一筆" />
+                                <Button layoutX="470.0" layoutY="448.0" mnemonicParsing="false" onAction="#insert" styleClass="danger" text="新增這一筆" />
+                                <Button layoutX="339.0" layoutY="448.0" mnemonicParsing="false" onAction="#blankRecord" styleClass="danger" text="新增空白一筆" />
+                                <Separator layoutX="-5.0" layoutY="488.0" prefHeight="0.0" prefWidth="610.0" />
+                                <TextField fx:id="queryID" layoutX="63.0" layoutY="517.0" prefHeight="32.0" prefWidth="192.0" promptText="查詢學號" text="u001" />
+                                <TextField fx:id="queryName" layoutX="62.0" layoutY="555.0" prefHeight="32.0" prefWidth="193.0" promptText="查詢姓名" text="王" />
+                                <Button layoutX="315.0" layoutY="517.0" mnemonicParsing="false" onAction="#findID" styleClass="success" text="學號查詢" />
+                                <Button layoutX="315.0" layoutY="555.0" mnemonicParsing="false" onAction="#findName" styleClass="success" text="姓名查詢" />
+                                <Button layoutX="159.0" layoutY="19.0" mnemonicParsing="false" onAction="#findAll" styleClass="success" text="全部查詢" />
+                                <Button layoutX="28.0" layoutY="19.0" mnemonicParsing="false" onAction="#connectToDB" styleClass="warning" text="資料庫連線" />
+                                <Separator layoutX="-3.0" layoutY="61.0" prefHeight="0.0" prefWidth="610.0" />
+                                <TableView fx:id="table_student" layoutX="23.0" layoutY="76.0" prefHeight="286.0" prefWidth="553.0">
+                                    <columns>
+                                        <TableColumn fx:id="col_id" onEditCommit="#onIdEditCommit" prefWidth="142.0" text="學號" />
+                                        <TableColumn fx:id="col_name" onEditCommit="#onNameEditCommit" prefWidth="200.0" text="姓名" />
+                                        <TableColumn fx:id="col_phone" onEditCommit="#onPhoneEditCommit" prefWidth="210.0" text="電話" />
+                                    </columns>
+                                </TableView>
+                                <Pagination fx:id="pagination" layoutX="28.0" layoutY="381.0" prefHeight="86.0" prefWidth="236.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>

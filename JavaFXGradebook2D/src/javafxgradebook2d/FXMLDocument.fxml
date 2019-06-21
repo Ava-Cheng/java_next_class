@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="333.0" prefWidth="389.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxgradebook2d.FXMLDocumentController">
+   <children>
+      <Button layoutX="291.0" layoutY="32.0" mnemonicParsing="false" onAction="#read_file" text="讀取成績" />
+      <Button layoutX="291.0" layoutY="71.0" mnemonicParsing="false" onAction="#print_all" text="印出成績" />
+      <TextArea fx:id="display" layoutX="14.0" layoutY="12.0" prefHeight="273.0" prefWidth="260.0" />
+      <Button layoutX="297.0" layoutY="149.0" mnemonicParsing="false" text="最小值" />
+      <Button layoutX="297.0" layoutY="102.0" mnemonicParsing="false" text="最大值" />
+   </children>
+</AnchorPane>

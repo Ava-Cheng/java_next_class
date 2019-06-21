@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="baseAnchorPane" prefHeight="650.0" prefWidth="600.0" stylesheets="@bootstrap3.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Book_management.CrudUserController">
+    <children>
+        <TabPane layoutX="-1.0" layoutY="-2.0" prefHeight="650.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="使用者管理">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="429.0" prefWidth="620.0" style="-fx-background-color: Azure;">
+                            <children>
+                                <TextField fx:id="urID" layoutX="73.0" layoutY="115.0" prefHeight="32.0" prefWidth="188.0" promptText="使用者ID" />
+                                <TextField fx:id="urpassword" layoutX="73.0" layoutY="153.0" prefHeight="32.0" prefWidth="189.0" promptText="密碼" />
+                                <TextField fx:id="urpermission" layoutX="73.0" layoutY="192.0" prefHeight="32.0" prefWidth="189.0" promptText="權限" />
+                                <TextField fx:id="recordNo" alignment="CENTER" disable="true" editable="false" layoutX="73.0" layoutY="260.0" prefHeight="30.0" prefWidth="188.0" />
+                                <Button layoutX="324.0" layoutY="115.0" mnemonicParsing="false" onAction="#nextRecord" styleClass="primary" text="下一筆" />
+                                <Button layoutX="324.0" layoutY="153.0" mnemonicParsing="false" onAction="#previousRecord" styleClass="primary" text="前一筆" />
+                                <Button layoutX="324.0" layoutY="189.0" mnemonicParsing="false" onAction="#firstRecord" styleClass="primary" text="第一筆" />
+                                <Button layoutX="324.0" layoutY="225.0" mnemonicParsing="false" onAction="#lastRecord" styleClass="primary" text="最後一筆" />
+                                <Button layoutX="432.0" layoutY="115.0" mnemonicParsing="false" onAction="#update" styleClass="danger" text="更新這一筆" />
+                                <Button layoutX="432.0" layoutY="152.0" mnemonicParsing="false" onAction="#delete" styleClass="danger" text="刪除這一筆" />
+                                <Button layoutX="432.0" layoutY="227.0" mnemonicParsing="false" onAction="#insert" styleClass="danger" text="新增這一筆" />
+                                <Button layoutX="432.0" layoutY="189.0" mnemonicParsing="false" onAction="#blankRecord" styleClass="danger" text="新增空白一筆" />
+                                <Button layoutX="324.0" layoutY="189.0" mnemonicParsing="false" onAction="#firstRecord" styleClass="primary" text="第一筆" />
+                                <Button layoutX="324.0" layoutY="225.0" mnemonicParsing="false" onAction="#lastRecord" styleClass="primary" text="最後一筆" />
+                                <Separator layoutX="5.0" layoutY="317.0" prefHeight="0.0" prefWidth="610.0" />
+                                <TextField fx:id="queryID" layoutX="74.0" layoutY="446.0" prefHeight="32.0" prefWidth="192.0" promptText="使用者ID" text="test1" />
+                                <Button layoutX="326.0" layoutY="446.0" mnemonicParsing="false" onAction="#findID" styleClass="success" text="使用者ID查詢" />
+                                <Button layoutX="188.0" layoutY="34.0" mnemonicParsing="false" onAction="#findAll" styleClass="success" text="全部查詢" />
+                                <Button layoutX="73.0" layoutY="34.0" mnemonicParsing="false" onAction="#connectToDB" styleClass="warning" text="資料庫連線" />
+                                <Separator layoutX="5.0" layoutY="80.0" prefHeight="0.0" prefWidth="610.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="異動紀錄">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TextArea fx:id="status" layoutX="24.0" layoutY="18.0" prefHeight="403.0" prefWidth="572.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>

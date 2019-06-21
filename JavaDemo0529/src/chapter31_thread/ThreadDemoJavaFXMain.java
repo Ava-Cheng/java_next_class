@@ -1,0 +1,141 @@
+package chapter31_thread;
+
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.FlowPane;
+import javafx.stage.Stage;
+
+public class ThreadDemoJavaFXMain extends Application {
+
+    //建構子
+    public ThreadDemoJavaFXMain() {
+        System.out.println("建構子");
+
+        Thread m1 = new Thread(new Machine(2000));
+        //Thread m2 = new Thread(new Machine(5000));
+
+        m1.start();
+        //m2.start();
+        
+        //new Thread(new Machine(3000)).start(); 
+
+        //為何需要執行緒?
+        //順序執行:等待輸入
+        /*
+        new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+
+                while (true) {
+                    System.out.println("請輸入:");
+                    Scanner input = new Scanner(System.in);
+                    String msg = input.next();
+                    System.out.println("輸入值:" + msg);
+                }
+
+            }
+
+        }).start();
+         */
+ /*
+//執行緒執行:無窮迴圈
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    try {
+                        Thread.sleep(2000);
+                        System.out.println("looping 2 seconds");
+                    } catch (InterruptedException ex) {
+                        System.out.println("break");
+                    }
+                }
+            }
+        }).start();
+         */
+ /*
+        //執行緒執行:無窮迴圈
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    try {
+                        Thread.sleep(5000);
+                        System.out.println("looping 5 seconds");
+                    } catch (InterruptedException ex) {
+                        System.out.println("break");
+                    }
+                }
+            }
+        }).start();
+         */
+ /*
+        System.out.println("請輸入第1個數:");
+        Scanner input = new Scanner(System.in);
+        String msg = input.next();
+        System.out.println("第1個數輸入值:" + msg);
+         */
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+
+        //產生第1個視窗
+        Button btn = new Button("OK");
+        FlowPane root = new FlowPane();
+
+        root.getChildren().add(btn);
+
+        Scene scene = new Scene(root, 300, 250);
+        primaryStage.setTitle("多執行緒");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+
+        System.out.println("start");
+
+        btn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("按下按鈕!");
+
+            }
+        });
+
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+}
+
+
+class Machine implements Runnable {
+
+    private int time;
+
+    public Machine(int time) {
+        this.time = time;
+    }
+
+    @Override
+    public void run() {
+
+        while (true) {
+            try {
+                Thread.sleep( time );
+                System.out.println("加工"+this.time+"毫秒");
+            } catch (InterruptedException ex) {
+                System.out.println("中斷");
+            }
+        }
+    }
+
+}

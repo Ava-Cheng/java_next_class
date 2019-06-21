@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="552.0" prefWidth="368.0" stylesheets="@bootstrap3.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chapter31_chatting_tutorial.ClientFXMLController">
+   <children>
+      <TextArea fx:id="display" editable="false" layoutX="11.0" layoutY="11.0" prefHeight="395.0" prefWidth="345.0" stylesheets="@myTextArea.css" wrapText="true" />
+      <TextArea fx:id="input" layoutX="12.0" layoutY="417.0" prefHeight="86.0" prefWidth="345.0" text="跟我賴一下" wrapText="true" />
+      <Button fx:id="btnSubmit" layoutX="264.0" layoutY="511.0" mnemonicParsing="false" onAction="#send" prefHeight="45.0" prefWidth="92.0" styleClass="primary" text="送出" />
+      <TextField fx:id="textfield_name" layoutX="14.0" layoutY="512.0" prefHeight="32.0" prefWidth="103.0" />
+      <Button fx:id="btnConnect" layoutX="131.0" layoutY="512.0" mnemonicParsing="false" onAction="#connect2server" prefHeight="45.0" prefWidth="92.0" styleClass="primary" text="連線" />
+   </children>
+</AnchorPane>

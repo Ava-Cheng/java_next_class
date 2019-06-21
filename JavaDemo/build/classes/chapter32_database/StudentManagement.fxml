@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="700.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chapter32_database.StudentManagementController">
+    <children>
+        <MenuBar prefHeight="32.0" prefWidth="550.0" style="-fx-background-color: #4EEE94;" AnchorPane.topAnchor="0.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="使用者登入">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#login" text="登入資料庫" />
+                        <MenuItem mnemonicParsing="false" onAction="#logout" text="登出資料庫" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="學生資料維護">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#gotoCrud" text="學生資料維護" />
+                        <MenuItem mnemonicParsing="false" onAction="#gotoCrudTableView" text="學生資料維護(表格呈現)" />
+                        <MenuItem mnemonicParsing="false" onAction="#gotoCrudStage" text="學生資料維護(新視窗)" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="報表列印">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#gotoReport" text="報表產生功能" />
+                        <MenuItem mnemonicParsing="false" onAction="#gotoReportStage" text="報表產生功能(新視窗)" />
+                    </items>
+                </Menu>
+            </menus>
+            <opaqueInsets>
+                <Insets top="10.0" />
+            </opaqueInsets>
+        </MenuBar>
+        <Pane fx:id="pane_container" layoutX="8.0" layoutY="36.0" prefHeight="664.0" prefWidth="630.0" stylesheets="@bootstrap3.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="36.0">
+            <children>
+                <ImageView fitHeight="350.0" fitWidth="450.0" layoutX="133.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../高科大.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="171.0" layoutY="480.0" text="高科大學生資料庫系統" textAlignment="CENTER">
+                    <font>
+                        <Font name="Microsoft YaHei" size="30.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

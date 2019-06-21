@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="517.0" prefWidth="636.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="chapter32_database.StudentManagementController">
+    <stylesheets>
+        <URL value="@bootstrap3.css" />
+    </stylesheets>
+   <children>
+      <MenuBar layoutY="7.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="登入">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="學生資料維護">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="報表產生">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#gotoReport" text="報表" />
+                  <MenuItem mnemonicParsing="false" onAction="#gotoReportStage" text="報表(新視窗)" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Pane fx:id="pane_container" layoutX="14.0" layoutY="37.0" prefHeight="469.0" prefWidth="605.0">
+         <children>
+            <ImageView fitHeight="316.0" fitWidth="457.0" layoutX="74.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@高科大.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

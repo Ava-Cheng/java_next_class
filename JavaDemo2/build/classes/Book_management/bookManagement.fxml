@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="700.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Book_management.bookManagementController">
+    <children>
+        <MenuBar prefHeight="32.0" prefWidth="550.0" style="-fx-background-color: #4EEE94;" AnchorPane.topAnchor="0.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="使用者登入">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#login" text="登入資料庫" />
+                        <MenuItem mnemonicParsing="false" onAction="#logout" text="登出資料庫" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="書籍查詢">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#gotobook" text="借還書" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="管理者">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#gotoBookManagement" text="書籍管理" />
+                        <MenuItem mnemonicParsing="false" onAction="#gotoUserManagement" text="使用者管理" />
+                    </items>
+                </Menu>
+            </menus>
+            <opaqueInsets>
+                <Insets top="10.0" />
+            </opaqueInsets>
+        </MenuBar>
+        <Pane fx:id="pane_container" layoutX="8.0" layoutY="36.0" prefHeight="664.0" prefWidth="630.0" stylesheets="@bootstrap3.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="36.0">
+            <children>
+                <ImageView fitHeight="350.0" fitWidth="450.0" layoutX="133.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../books.jpg" />
+                    </image>
+                </ImageView>
+                <Label layoutX="171.0" layoutY="480.0" text="書籍資料庫系統" textAlignment="CENTER">
+                    <font>
+                        <Font name="Microsoft YaHei" size="30.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

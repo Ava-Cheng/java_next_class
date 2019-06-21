@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="650.0" prefWidth="600.0" stylesheets="@bootstrap3.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chapter32_database.GenerateReportController">
+   <children>
+      <TabPane layoutY="1.0" prefHeight="650.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="20.0">
+        <tabs>
+          <Tab text="學生修課查詢報表">
+               <content>
+                  <AnchorPane prefHeight="665.0" prefWidth="789.0">
+                     <children>
+                        <TextArea fx:id="display" layoutY="71.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="511.0" prefWidth="581.0" stylesheets="@myTextArea.css" />
+                        <TextField fx:id="field_student_id" alignment="CENTER_RIGHT" layoutX="138.0" layoutY="15.0" prefHeight="32.0" prefWidth="118.0" styleClass="first" text="u001">
+                           <HBox.margin>
+                              <Insets top="15.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Button layoutX="266.0" layoutY="15.0" mnemonicParsing="false" onAction="#generate_stud_report" text="搜尋">
+                           <HBox.margin>
+                              <Insets top="15.0" />
+                           </HBox.margin>
+                           <styleClass>
+                              <String fx:value="action-btn" />
+                              <String fx:value="success" />
+                           </styleClass>
+                        </Button>
+                        <Label layoutX="20.0" layoutY="15.0" prefHeight="30.0" prefWidth="108.0" text="輸入學生學號">
+                           <HBox.margin>
+                              <Insets left="20.0" top="15.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="356.0" layoutY="15.0" mnemonicParsing="false" onAction="#generate_stud_report" text="報表輸出至檔案">
+                           <styleClass>
+                              <String fx:value="btn" />
+                              <String fx:value="info" />
+                           </styleClass>
+                           <HBox.margin>
+                              <Insets top="15.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+          <Tab text="教師導生報表">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox prefHeight="75.0" prefWidth="582.0" spacing="10.0">
+                           <children>
+                              <Label prefHeight="30.0" prefWidth="108.0" text="輸入教師編號">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="20.0" top="15.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="field_teacher_id" alignment="CENTER_RIGHT" prefHeight="32.0" prefWidth="118.0" styleClass="first" text="t01">
+                                 <HBox.margin>
+                                    <Insets top="15.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <Button mnemonicParsing="false" onAction="#generate_teacher_report" text="搜尋">
+                                 <styleClass>
+                                    <String fx:value="action-btn" />
+                                    <String fx:value="success" />
+                                 </styleClass>
+                                 <HBox.margin>
+                                    <Insets top="15.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button layoutX="276.0" layoutY="25.0" mnemonicParsing="false" onAction="#generate_stud_report" text="報表輸出至檔案">
+                                 <styleClass>
+                                    <String fx:value="btn" />
+                                    <String fx:value="info" />
+                                 </styleClass>
+                                 <HBox.margin>
+                                    <Insets top="15.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <TextArea fx:id="display_teacher" editable="false" layoutY="69.0" prefHeight="512.0" prefWidth="582.0" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="學生導師報表">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextArea fx:id="display_studAdvisor" layoutX="23.0" layoutY="67.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="517.0" />
+                        <Button layoutX="43.0" layoutY="18.0" mnemonicParsing="false" onAction="#generate_studAdvisor_report" text="產生所有學生導師報表">
+                           <styleClass>
+                              <String fx:value="action-btn" />
+                              <String fx:value="success" />
+                           </styleClass>
+                           <HBox.margin>
+                              <Insets left="20.0" top="15.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button layoutX="215.0" layoutY="18.0" mnemonicParsing="false" onAction="#generate_stud_report" text="報表輸出至檔案">
+                           <styleClass>
+                              <String fx:value="btn" />
+                              <String fx:value="info" />
+                           </styleClass>
+                           <HBox.margin>
+                              <Insets top="15.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
